@@ -1,10 +1,9 @@
-# Odot-App
-
-## Description
+Introduction
+============
 
 Odot-App is a personal project designed to manage tasks with a simple and intuitive interface.
 
-## Features
+**Features**
 
 - **Add Tasks**: Click the floating icon to add new tasks with a name, priority level, and selected day of the week.
 - **Organize Tasks**: Tasks can be moved between columns representing different days.
