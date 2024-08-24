@@ -11,3 +11,8 @@ python:
 
 sphinx:
   configuration: docs/conf.py
+
+files:
+  include:
+    - docs/_static/
+    - docs/_templates/
