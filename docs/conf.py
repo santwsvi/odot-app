@@ -17,6 +17,9 @@ extensions = [
     'sphinx.ext.coverage',
     'sphinx.ext.intersphinx',
     'sphinx_rtd_theme',
+    'myst_parser',
+    'sphinxcontrib.mermaid',
+
 ]
 
 html_theme = "sphinx_rtd_theme"

@@ -20,4 +20,5 @@ Odot-App is a personal project designed to manage tasks with a simple and intuit
    introduction
    usage
    features
+   architecture
    changelog

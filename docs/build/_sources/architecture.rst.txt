@@ -1,0 +1,88 @@
+Architecture
+=============
+
+This section provides an overview of the architecture of Odot-App, including its components and how they interact.
+
+Odot-App uses a layered architecture to separate concerns and ensure scalability and maintainability.
+
+Overview
+---------
+
+- **Frontend:** Responsible for user interface and user interactions.
+- **Backend:** Manages business logic, processes requests, and interacts with the database.
+- **Database:** Stores tasks, user information, and settings.
+- **External Services:** Integrates with external APIs like Google Calendar for task synchronization.
+
+.. mermaid::
+
+    graph TD
+        A[ odot-front ] -->|Requests| B[odot-service]
+        B -->|Fetch/Store| C[odot-db ]
+        B -->|Sync| D[Google Calendar API]
+        A -->|Display Data| B
+        B -->|Manage Data| C
+        D -->|Calendar Data| B
+        
+.. raw:: html
+    <br><br>
+Components and Interactions
+----------------------------
+
+**Frontend**
+  - **Technology:** React / Typescript
+  - **Role:** Render user interface and manage user interactions.
+
+**Backend**
+  - **Technology:** Java 17 with Spring
+  - **Role:** Handle business logic, API requests, and data management.
+
+**Database**
+  - **Technology:** PostgreSQL
+  - **Role:** Persist data related to tasks and user settings.
+
+**External Services**
+  - **Technology:** Google Calendar API
+  - **Role:** Sync tasks with external calendar services.
+
+.. mermaid::
+
+    graph TD
+        A[odot-front]
+        B[odot-service]
+        C[odot-db]
+        D[Google Calendar API]
+
+        A -->|UI Interactions| B
+        B -->|Business Logic| C
+        B -->|Data Sync| D
+        C -->|Store/Fetch Data| B
+        D -->|Sync Data| B
+
+.. raw:: html
+    <br><br>
+Implementation 
+---------------
+
+1. **Authentication Configuration:**
+   - Set up OAuth 2.0 for user authentication.
+   - Securely manage access tokens.
+
+2. **Data Synchronization:**
+   - Implement methods to fetch and sync calendar events with tasks in Odot-App.
+
+3. **User Interface:**
+   - Develop UI components to display and manage calendar events.
+
+.. mermaid::
+
+    graph TD
+        A[odot-front]
+        B[odot-service]
+        C[OAuth 2.0]
+        D[Google Calendar API]
+
+        A -->|UI Requests| B
+        B -->|Handles Requests| C
+        B -->|Sync Data| D
+        C -->|Authenticate| D
+        D -->|Calendar Data| B
