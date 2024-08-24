@@ -1,21 +1,13 @@
-# Este arquivo configura o projeto no Read the Docs.
-# Mais informações: https://docs.readthedocs.io/en/latest/config.html
+version: "2"
 
-# Configurações gerais para o projeto.
-version: 2
-
-# Especifica o formato da documentação. `sphinx` é o formato usado para documentação com Sphinx.
-sphinx:
-  configuration: docs/conf.py
-
-# Configura o comando de construção da documentação.
 build:
-  os: ubuntu-22.04
+  os: "ubuntu-22.04"
   tools:
-    python: "3.11" 
-    
-# Configura o ambiente de Python e os pacotes a serem instalados.
+    python: "3.10"
+
 python:
-  version: "3.11"
   install:
     - requirements: docs/requirements.txt
+
+sphinx:
+  configuration: docs/source/conf.py
